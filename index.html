@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="虐女文学与影视作品专题站，提供深度解析、经典虐文推荐及情感心理分析，探讨女性角色在文学与影视中的命运与救赎。">
+    <meta name="keywords" content="虐女,虐文,虐女文学,情感文学,女性角色,悲剧美学">
+    <title>虐女-深度文学解析与经典作品推荐指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #f8f5f2;
+            --card-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-secondary: #666666;
+            --accent-color: #8e44ad;
+            --accent-hover: #732d91;
+            --border-color: #e0e0e0;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 6px 16px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .search-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #2c2c2c 0%, #4a3b52 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 100 L0 100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Article Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            color: var(--text-main);
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+            margin-top: auto;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .read-more {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .read-more:hover {
+            color: var(--accent-color);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-section {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .list-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .list-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .list-item span {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* Section Title */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .section-header a {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            grid-column: 1 / -1;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 3rem var(--spacing-unit);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">浅墨<span>文学</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">经典推荐</a></li>
+                <li><a href="#">深度解析</a></li>
+                <li><a href="#">情感社区</a></li>
+                <li><a href="#">作者专栏</a></li>
+            </ul>
+        </nav>
+        <button class="search-btn">搜索</button>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探寻悲剧美学<br>解析女性命运</h1>
+            <p>聚焦“虐女”文学与影视作品，深度剖析人物情感困境与社会背景，为读者提供客观的阅读视角与心理疏导。</p>
+            <div class="hero-tags">
+                <span class="tag">悲剧文学</span>
+                <span class="tag">人物心理</span>
+                <span class="tag">社会议题</span>
+                <span class="tag">情感共鸣</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="section-header">
+            <h2>深度解析与推荐</h2>
+            <a href="#">查看更多 &rarr;</a>
+        </div>
+
+        <div class="content-grid">
+            <!-- Article 1 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/sad1/400/250" alt="文学分析图片" class="card-image">
+                <div class="card-body">
+                    <div class="card-meta">文学理论</div>
+                    <h3 class="card-title">论“虐女”文学中的宿命感与反抗</h3>
+                    <p class="card-excerpt">深入探讨此类作品中女性角色为何常陷入困境，以及作者如何通过悲剧结局传达对人性弱点的批判。</p>
+                    <div class="card-footer">
+                        <div class="author">
+                            <span>编辑部</span>
+                        </div>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/sad2/400/250" alt="影视分析图片" class="card-image">
+                <div class="card-body">
+                    <div class="card-meta">影视评论</div>
+                    <h3 class="card-title">经典影视剧中的女性牺牲与救赎</h3>
+                    <p class="card-excerpt">回顾那些令人心碎却引人深思的影视桥段，分析角色背后的社会意义与情感逻辑。</p>
+                    <div class="card-footer">
+                        <div class="author">
+                            <span>影评人</span>
+                        </div>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/sad3/400/250" alt="心理分析图片" class="card-image">
+                <div class="card-body">
+                    <div class="card-meta">心理疏导</div>
+                    <h3 class="card-title">阅读虐文后的心理调节指南</h3>
+                    <p class="card-excerpt">如何健康地欣赏悲剧艺术？提供阅读后的心理调适建议，避免过度沉浸在负面情绪中。</p>
+                    <div class="card-footer">
+                        <div class="author">
+                            <span>心理专栏</span>
+                        </div>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/sad4/400/250" alt="历史背景图片" class="card-image">
+                <div class="card-body">
+                    <div class="card-meta">历史背景</div>
+                    <h3 class="card-title">古代女性命运的缩影</h3>
+                    <p class="card-excerpt">从历史文献中提炼真实案例，还原古代女性在家族与权力斗争中的生存状态。</p>
+                    <div class="card-footer">
+                        <div class="author">
+                            <span>历史社</span>
+                        </div>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside>
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">热门分类</h3>
+            <div class="list-item">
+                <a href="#">古风虐文</a>
+                <span>1.2w 阅读</span>
+            </div>
+            <div class="list-item">
+                <a href="#">现代情感剧</a>
+                <span>8.5k 阅读</span>
+            </div>
+            <div class="list-item">
+                <a href="#">民国题材</a>
+                <span>5.6k 阅读</span>
+            </div>
+            <div class="list-item">
+                <a href="#">架空历史</a>
+                <span>3.1k 阅读</span>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">情感关注</h3>
+            <div class="list-item">
+                <a href="#">原生家庭创伤</a>
+                <span>深度解析</span>
+            </div>
+            <div class="list-item">
+                <a href="#">情感依赖症候群</a>
+                <span>心理分析</span>
+            </div>
+            <div class="list-item">
+                <a href="#">恋爱脑的成因</a>
+                <span>自我提升</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>常见问题解答</h2>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                什么是“虐女”题材？
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                “虐女”题材通常指在文学或影视作品中，女性角色遭遇较多磨难、情感挫折或命运悲剧的故事类型。这类作品往往侧重于刻画人物内心的挣扎、情感上的痛苦以及最终的不幸结局，以此探讨人性的复杂或社会的现实。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                为什么有人喜欢阅读虐文？
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                喜欢阅读虐文的人往往能从中获得情感宣泄或共鸣。通过代入角色的痛苦，读者可以在安全的环境中体验强烈的情感波动，从而获得一种心理上的释放或对自身经历的反思。同时，优秀的悲剧作品往往具有深刻的思想内涵。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                长期阅读虐文会对心理健康有影响吗？
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                适度阅读通常不会造成严重影响，但若过度沉浸，可能会导致情绪低落、焦虑或产生不切实际的代入感。建议读者在阅读后进行自我调节，关注现实生活，必要时可寻求心理专业人士的帮助。
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于本站</h4>
+            <p style="font-size: 0.9rem; color: #999;">浅墨文学致力于提供高质量的文化内容，关注文学、影视与心理健康的交叉领域，为读者提供有深度的阅读体验。</p>
+        </div>
+        <div class="footer-col">
+            <h4>栏目导航</h4>
+            <ul>
+                <li><a href="#">经典推荐</a></li>
+                <li><a href="#">深度解析</a></li>
+                <li><a href="#">情感社区</a></li>
+                <li><a href="#">投稿指南</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>友情链接</h4>
+            <ul>
+                <li><a href="#">文学论坛</a></li>
+                <li><a href="#">影视资讯</a></li>
+                <li><a href="#">心理驿站</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 浅墨文学. All Rights Reserved. 本站内容仅供文化交流，不涉及商业用途。</p>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Simple Search Button Interaction
+        const searchBtn = document.querySelector('.search-btn');
+        searchBtn.addEventListener('click', () => {
+            alert('搜索功能仅供演示，请输入关键词进行查找。');
+        });
+    });
+</script>
+
+</body>
+              </html>
