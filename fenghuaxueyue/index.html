@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="风花雪月传说 - 传承千年的大理白族风情与浪漫传说。探索苍山洱海的自然美景，体验白族文化的独特魅力，了解经典的文学与历史故事。">
+    <meta name="keywords" content="风花雪月传说,大理,白族文化,苍山洱海,旅游攻略,民族风情">
+    <title>风花雪月传说 - 大理白族风情与浪漫传说</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #d35400;
+            --accent-color: #27ae60;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #fdfbf7;
+            --bg-white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #732d91;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/seed/dali_landscape/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: white;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Four Wonders Grid */
+        .wonders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .wonder-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .wonder-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .wonder-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .wonder-card h3 {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .wonder-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Legend Section */
+        .legend-section {
+            background-color: white;
+        }
+
+        .legend-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .legend-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .legend-text p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .legend-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .legend-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .legend-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Cultural Features */
+        .features-section {
+            background-color: #f4f1ea;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Travel Guide */
+        .guide-section {
+            background-color: white;
+        }
+
+        .guide-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .step {
+            flex: 1 1 300px;
+            max-width: 350px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-content h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: #f4f1ea;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+            max-height: 200px; /* Approximate max height */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                display: none; /* Simple hiding for mobile for this demo */
+            }
+
+            .nav-container {
+                justify-content: center;
+            }
+
+            .legend-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-padding {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.74 5.88a6 6 0 0 1-8.48 8.48A6 6 0 0 1 5.26 8.57L12 2.69z"></path></svg>
+                <span>风花雪月传说</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#hero" class="active">首页</a></li>
+                    <li><a href="#wonders">四景传说</a></li>
+                    <li><a href="#legend">历史渊源</a></li>
+                    <li><a href="#culture">文化体验</a></li>
+                    <li><a href="#guide">旅游指南</a></li>
+                </ul>
+            </nav>
+            <a href="#guide" class="cta-btn">开启旅程</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero-content">
+                <h1>风花雪月传说</h1>
+                <p>探寻大理苍山洱海之间的浪漫史诗，感受白族文化的千年脉动与自然奇观的完美融合。</p>
+                <div class="hero-btns">
+                    <a href="#wonders" class="btn btn-primary">探索四景</a>
+                    <a href="#guide" class="btn btn-outline">旅行攻略</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Four Wonders -->
+        <section id="wonders" class="section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">大理四景</h2>
+                    <p class="section-subtitle">上关花、下关风、苍山雪、洱海月，谱写人间绝色</p>
+                </div>
+                <div class="wonders-grid">
+                    <div class="wonder-card">
+                        <span class="wonder-icon">🌸</span>
+                        <h3>上关花</h3>
+                        <p>传说中上关有棵“十里香”树，花大如莲，香气扑鼻。如今的大理，繁花似锦，四季不断，不仅是自然的馈赠，更是浪漫的象征。</p>
+                    </div>
+                    <div class="wonder-card">
+                        <span class="wonder-icon">🍃</span>
+                        <h3>下关风</h3>
+                        <p>下关地处风口，常年吹拂着自苍山洱海间穿出的强劲气流。风势虽大，却驱散了暑气，带来阵阵清凉，是这里独特的气候名片。</p>
+                    </div>
+                    <div class="wonder-card">
+                        <span class="wonder-icon">❄️</span>
+                        <h3>苍山雪</h3>
+                        <p>十九峰十八溪，峰峰积雪。即便在炎炎夏日，山顶依然银装素裹，云雾缭绕，宛如仙境，是俯瞰大理全景的最佳视角。</p>
+                    </div>
+                    <div class="wonder-card">
+                        <span class="wonder-icon">🌙</span>
+                        <h3>洱海月</h3>
+                        <p>每逢农历十五，月圆之夜，洱海水面波光粼粼，倒映着皓月清辉。水天一色，静谧祥和，是无数诗人墨客沉醉的意境。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legend Section -->
+        <section id="legend" class="section-padding legend-section">
+            <div class="container">
+                <div class="legend-content">
+                    <div class="legend-image">
+                        <img src="https://picsum.photos/seed/ancient_dali/600/400" alt="大理古城风貌">
+                    </div>
+                    <div class="legend-text">
+                        <h2>千年传说的文化底蕴</h2>
+                        <p>“风花雪月”不仅是对大理自然景观的概括，更承载着深厚的白族文化内涵。在白族民间传说中，这些自然现象往往与英雄豪杰、忠贞爱情紧密相连。</p>
+                        <p>从段氏段赤诚的壮烈牺牲到白族姑娘阿凤的凄美爱情，每一处风花雪月背后，都有一段动人心魄的故事。这些传说赋予了苍山洱海以灵魂，使其成为了大理精神文化的象征。</p>
+                        <ul class="legend-list">
+                            <li>白族文化的核心图腾</li>
+                            <li>融合了自然崇拜与历史记忆</li>
+                            <li>体现了大理人对美好生活的向往</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultural Features -->
+        <section id="culture" class="section-padding features-section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">文化体验</h2>
+                    <p class="section-subtitle">除了风景，更有浓郁的民族风情等待您发现</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>白族三道茶</h3>
+                        <p>一苦、二甜、三回味。这不仅是味觉的享受，更是人生哲理的体现，是白族待客的最高礼仪。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>扎染艺术</h3>
+                        <p>以板蓝根为染料，用针线扎结，染出蓝白相间的精美图案，是国家级非物质文化遗产。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>三坊一照壁</h3>
+                        <p>白族传统民居建筑的代表，布局严谨，装饰华丽，体现了白族人民的建筑智慧与审美情趣。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>甲马版画</h3>
+                        <p>白族民间宗教祭祀用品，线条粗犷，色彩鲜艳，蕴含着独特的民俗信仰与精神世界。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Guide -->
+        <section id="guide" class="section-padding guide-section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">风花雪月之旅</h2>
+                    <p class="section-subtitle">如何深度体验大理的浪漫与诗意</p>
+                </div>
+                <div class="guide-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>选择最佳时节</h4>
+                            <p>每年3月至5月和9月至11月是最佳旅行时间。此时气候宜人，花开正好，月色最明。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>骑行环洱海</h4>
+                            <p>租一辆单车或电动车，沿着洱海生态廊道骑行，近距离感受下关风与苍山雪的拥抱。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>探访古城夜色</h4>
+                            <p>夜幕降临，漫步大理古城，感受古城的灯火阑珊，品尝当地特色美食，体验慢生活。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>登顶苍山洗眼</h4>
+                            <p>乘坐感通索道或洗马潭索道，登顶苍山，俯瞰洱海全景，体验“苍山负雪，明烛天南”的壮丽。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section-padding faq-section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">常见问题</h2>
+                    <p class="section-subtitle">关于风花雪月传说的疑问解答</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">“风花雪月”具体指哪四个地方？</div>
+                        <div class="faq-answer">
+                            <p>“风花雪月”通常指代大理的四个标志性景观：下关的风、上关的花、苍山的雪、洱海的月。这是对大理自然风光的高度概括。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">去大理旅行需要注意什么？</div>
+                        <div class="faq-answer">
+                            <p>大理紫外线较强，需做好防晒措施；早晚温差较大，建议携带外套；尊重当地少数民族的宗教信仰和风俗习惯。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">除了这四景，大理还有什么好玩的？</div>
+                        <div class="faq-answer">
+                            <p>大理周边还有喜洲古镇、双廊古镇、沙溪古镇、崇圣寺三塔等著名景点，以及丰富的白族民俗活动和美食。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>风花雪月传说</h4>
+                    <p style="font-size: 0.9rem; color: #bdc3c7;">致力于推广大理白族自治州独特的自然风光与民族文化，让更多人了解这片土地的美丽与传奇。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#hero">首页</a></li>
+                        <li><a href="#wonders">四景介绍</a></li>
+                        <li><a href="#guide">旅游攻略</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">大理旅游官网</a></li>
+                        <li><a href="#">白族文化研究院</a></li>
+                        <li><a href="#">摄影作品集</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 风花雪月传说. All Rights Reserved. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
