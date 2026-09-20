@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>91发布页-最新影视资讯与影视资源聚合平台</title>
+    <meta name="description" content="91发布页提供最新的影视资讯、电影解说、电视剧更新进度查询及正版影视资源推荐。我们致力于为影迷提供全面、及时的影视内容服务。">
+    <meta name="keywords" content="91发布页,影视资讯,电影推荐,电视剧更新,影视资源">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --primary-hover: #b20710;
+            --bg-dark: #141414;
+            --bg-card: #1f1f1f;
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), var(--bg-dark)), url('https://picsum.photos/seed/cinema/1600/900') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            padding-right: var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--text-main);
+            margin-left: 12px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .movie-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .poster-wrapper {
+            position: relative;
+            aspect-ratio: 2/3;
+        }
+
+        .poster-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .rating-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.8);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Info Section */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+
+        .info-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-list label {
+            color: var(--text-secondary);
+        }
+
+        .info-list span {
+            color: var(--text-main);
+        }
+
+        .info-text {
+            color: var(--text-secondary);
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 12px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            font-size: 14px;
+            border-top: 1px solid #333;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            margin-right: 20px;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+                text-align: center;
+            }
+            .hero-content {
+                padding-right: 0;
+                margin-top: 40px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">91发布页</div>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">最新资讯</a>
+                <a href="#">电影推荐</a>
+                <a href="#">电视剧</a>
+                <a href="#">会员专区</a>
+                <a href="#">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>探索光影世界，尽在91发布页</h1>
+                    <p>汇集全网最新影视资讯、深度影评及高清资源聚合。无论您是追剧党还是电影爱好者，这里都是您获取影视信息的首选平台。</p>
+                    <div>
+                        <a href="#" class="btn">立即浏览</a>
+                        <a href="#" class="btn btn-outline">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Updates Section -->
+        <section class="container">
+            <h2 class="section-title">最新影视资讯</h2>
+            <div class="movie-grid">
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie1/300/450" alt="电影海报">
+                        <div class="rating-badge">9.2分</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">星际穿越：深空归来</h3>
+                        <div class="card-meta">
+                            <span>科幻 / 冒险</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie2/300/450" alt="电影海报">
+                        <div class="rating-badge">8.8分</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">城市迷雾</h3>
+                        <div class="card-meta">
+                            <span>悬疑 / 犯罪</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie3/300/450" alt="电影海报">
+                        <div class="rating-badge">9.5分</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">静默之音</h3>
+                        <div class="card-meta">
+                            <span>剧情 / 爱情</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie4/300/450" alt="电影海报">
+                        <div class="rating-badge">8.1分</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">极速风暴</h3>
+                        <div class="card-meta">
+                            <span>动作 / 竞技</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Information & Guide Section -->
+        <section class="container">
+            <div class="info-grid">
+                <aside>
+                    <h2 class="section-title">影视指南</h2>
+                    <ul class="info-list">
+                        <li>
+                            <label>更新频率</label>
+                            <span>每日实时更新</span>
+                        </li>
+                        <li>
+                            <label>资源格式</label>
+                            <span>1080P / 4K / 杜比视界</span>
+                        </li>
+                        <li>
+                            <label>推荐设备</label>
+                            <span>PC / 手机 / 智能电视</span>
+                        </li>
+                        <li>
+                            <label>版权说明</label>
+                            <span>仅供学习交流</span>
+                        </li>
+                    </ul>
+                </aside>
+                <article>
+                    <h2 class="section-title">关于91发布页</h2>
+                    <p class="info-text">
+                        91发布页是一个专注于影视内容聚合与资讯传播的平台。我们致力于为用户提供最新、最全的影视动态。平台涵盖电影、电视剧、动漫等多个领域，通过精准的算法推荐和人工审核，确保用户能够快速找到感兴趣的内容。我们的团队由资深影迷和内容策划组成，不仅提供资源链接，更提供深度的影评分析，帮助用户更好地理解作品内涵。
+                    </p>
+                    <br>
+                    <p class="info-text">
+                        在浏览和使用本站时，请遵守相关法律法规，尊重知识产权。我们鼓励用户支持正版影视作品，通过官方渠道观看高质量内容。91发布页将持续优化用户体验，为您打造更便捷的影视探索之旅。
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    如何获取最新的影视资源？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    您可以关注本站的“最新资讯”板块，我们会第一时间发布更新通知。同时，注册会员后，您将收到专属的推送提醒。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    资源是否支持在线观看？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    是的，部分热门资源提供在线播放功能，您可以直接在浏览器中观看。对于需要下载的资源，我们也提供了高速下载链接。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    为什么某些页面无法打开？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    这可能是由于网络波动或服务器维护导致的。建议您检查网络连接，稍后刷新页面，或尝试使用其他浏览器访问。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>91发布页</h3>
+                    <p>您的专业影视资讯聚合平台</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">使用条款</a>
+                    <a href="#">隐私政策</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">投稿建议</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 91发布页. All Rights Reserved. 本站内容仅供学习交流，请勿用于商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Interaction Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
