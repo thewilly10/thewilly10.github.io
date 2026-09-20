@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福利费列支范围 - 企业薪酬福利合规指南与费用核算标准</title>
+    <meta name="description" content="本文详细解读福利费列支范围，涵盖国家财务会计制度规定、工资薪金与福利费的区别、具体可列支项目及税务风险防范，为企业财务人员提供合规操作指南。">
+    <meta name="keywords" content="福利费列支范围, 工资薪金, 企业所得税, 职工福利费, 财务制度, 费用核算">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Layout */
+        main {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Intro Section */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .intro-text h2 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .intro-text p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .intro-visual {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .highlight-box {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        /* Core Content: List of Deductible Items */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .deductible-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Warning Section */
+        .warning-section {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 60px;
+        }
+
+        .warning-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #856404;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .warning-content {
+            color: #856404;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 24px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: var(--container-width);
+            margin: 40px auto 0;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">
+            <span>财税</span>合规指南
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#core" class="active">核心范围</a></li>
+                <li><a href="#exclusions">禁止列支</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="cta-btn">获取专业建议</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-inner" style="max-width: var(--container-width); margin: 0 auto; padding: 0 var(--spacing-unit);">
+        <h1>福利费列支范围</h1>
+        <p>准确界定工资薪金与福利费的边界，合理控制企业所得税税前扣除比例，避免税务稽查风险。</p>
+    </div>
+</section>
+
+<main>
+    <!-- Intro Section -->
+    <section class="intro-grid">
+        <div class="intro-text">
+            <h2>什么是福利费列支范围？</h2>
+            <p>在企业的财务核算中，福利费是指企业为获得职工提供的服务而给予的各种形式的报酬以及其他相关支出。准确掌握福利费列支范围，是财务人员合规处理薪酬支出的基础。</p>
+            <div class="highlight-box">
+                根据《中华人民共和国企业所得税法实施条例》及相关财务制度，福利费属于职工薪酬的一部分，在计算应纳税所得额时，有严格的比例限制（通常为工资薪金总额的14%以内）。
+            </div>
+            <p>本指南将为您详细梳理哪些支出属于合规的福利费列支范围，以及哪些支出需要严格区分，避免混淆。</p>
+        </div>
+        <div class="intro-visual">
+            <h3 style="margin-bottom: 15px;">合规列支原则</h3>
+            <ul style="color: var(--text-secondary); line-height: 2;">
+                <li>✓ 必须与生产经营活动直接相关</li>
+                <li>✓ 支出必须真实发生并有合法凭证</li>
+                <li>✓ 符合国家统一的财务会计制度</li>
+                <li>✓ 在规定的税前扣除比例之内</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Core Deductible Items -->
+    <section id="core">
+        <h2 class="section-title">福利费列支范围详解</h2>
+        <p style="margin-bottom: 24px; color: var(--text-secondary);">以下项目通常被视为职工福利费，在符合条件时可进行税前扣除：</p>
+        
+        <div class="deductible-list">
+            <article class="card">
+                <span class="card-icon">🛒</span>
+                <h3>职工生活困难补助</h3>
+                <p>指由于疾病、自然灾害或其他特殊情况导致生活困难，企业给予的临时性补助。</p>
+            </article>
+
+            <article class="card">
+                <span class="card-icon">🍽️</span>
+                <h3>食堂经费及补贴</h3>
+                <p>企业设立职工食堂、提供午餐补贴或班车费用，属于集体福利支出范畴。</p>
+            </article>
+
+            <article class="card">
+                <span class="card-icon">🚗</span>
+                <h3>交通、通讯补贴</h3>
+                <p>为职工提供的上下班交通补贴、通讯费用补贴等，需在工资薪金总额中列支。</p>
+            </article>
+
+            <article class="card">
+                <span class="card-icon">🏥</span>
+                <h3>医疗保健支出</h3>
+                <p>为职工提供的医疗费用报销、补充医疗保险、健康体检费用等。</p>
+            </article>
+
+            <article class="card">
+                <span class="card-icon">🎁</span>
+                <h3>节日慰问品</h3>
+                <p>在春节、中秋等法定节日发放给职工的实物慰问品或现金补贴。</p>
+            </article>
+
+            <article class="card">
+                <span class="card-icon">🎓</span>
+                <h3>职工教育及培训</h3>
+                <p>除特殊专业培训外，一般性的业务培训、技能提升培训费用。</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Warning Section -->
+    <section id="exclusions">
+        <div class="warning-section">
+            <div class="warning-header">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                注意：以下项目通常不属于福利费列支范围
+            </div>
+            <div class="warning-content">
+                <p><strong>1. 股权激励与奖金：</strong> 需作为工资薪金在税前扣除，不得混入福利费。</p>
+                <p><strong>2. 住房公积金与养老保险：</strong> 属于“五险一金”，是法定的社会保险，不属于福利费。</p>
+                <p><strong>3. 非福利性实物奖励：</strong> 如年终一次性奖金、劳保用品等，通常按工资薪金处理。</p>
+                <p><strong>4. 股东及离退休人员费用：</strong> 企业为股东支付的款项或离退休人员的工资福利，不得在企业所得税前列支。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <h2 class="section-title">常见问题解答</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">福利费税前扣除的比例是多少？</div>
+                <div class="faq-answer">根据《企业所得税法实施条例》，企业发生的职工福利费支出，不超过工资薪金总额14%的部分，准予扣除；超过部分，不得扣除。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">通讯费和交通费补贴怎么入账？</div>
+                <div class="faq-answer">建议计入“工资薪金总额”进行核算，并分别设置“通讯补贴”和“交通补贴”明细科目，以便准确统计工资总额，从而计算福利费限额。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">节日发放的礼品是福利费吗？</div>
+                <div class="faq-answer">属于职工福利费。但需注意，如果是向全体员工发放的，通常可以全额在14%限额内扣除；如果是向特定人员发放的，需符合福利费定义。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何证明福利费支出的真实性？</div>
+                <div class="faq-answer">企业需保留合法的支出凭证，如发票、收据、签到表、领用清单等，以备税务机关后续检查。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" style="margin-top: 60px; text-align: center;">
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <h3 style="margin-bottom: 12px;">需要进一步咨询财务税务合规问题？</h3>
+            <p style="margin-bottom: 24px; color: var(--text-secondary);">专业的财务顾问可以帮助您优化薪酬结构，确保福利费列支合规，降低税务风险。</p>
+            <button class="cta-btn" onclick="alert('感谢您的兴趣。在实际应用中，这里将链接到客服系统或预约表单。')">联系专业顾问</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>财税合规指南</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6;">致力于为中小企业提供准确的财务核算标准和税务合规建议，帮助企业规避风险，健康发展。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速导航</h4>
+            <ul>
+                <li><a href="#core">核心范围</a></li>
+                <li><a href="#exclusions">禁止列支</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>相关资源</h4>
+            <ul>
+                <li><a href="#">企业所得税法实施条例</a></li>
+                <li><a href="#">企业会计准则第9号</a></li>
+                <li><a href="#">最新税收政策解读</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 财税合规指南网. 保留所有权利. 本页面内容仅供学习参考，不构成法律或税务建议。</p>
+    </div>
+</footer>
+
+</body>
+</html>
